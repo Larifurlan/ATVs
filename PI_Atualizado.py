@@ -248,7 +248,6 @@ try:
         #prenche a matriz com os valores obtidos
         matriz.append(linha)
         matriz.append(novalinha)
-        print("Matriz da palavra: ",matriz)
         colunas = int(len(matriz[0])) #retorna nº de colunas da matriz
         for linha in range(2):#cria nova linha
             cifrado.append([])
@@ -270,9 +269,6 @@ try:
         # transforma a matriz transposta em string
         for i in range(len(trans)):
             texto_cifrado = texto_cifrado + alfabeto[trans[i]]
-        print("Matriz cifrada:",cifrado)
-        print("Matriz cifrada transposta:",trans)
-        print(descricao_cadastro + " = "+texto_cifrado)
 
         cursor.execute(f'''INSERT INTO PROODUTOS VALUES({codigo_cadastro},'{nome_cadastro}','{texto_cifrado}',
                 {custo_cadastro},{fixo_cadastro},{comissao_cadastro},{impostos_cadastro},{rentabilidade_cadastro})'''
@@ -460,7 +456,7 @@ try:
                         contador=contador+1
                         apagarProdutos()
                     else:
-                        telaMenu #Condição pra volta pra tela inicial
+                        telaMenu()#Condição pra volta pra tela inicial
         print("\n\t\t\033[42mATENÇÃO!!!\033[0m\n\n")
         print("Voçê Deseja Mesmo Excluir Dados Da Tabela?\n\033[32m[1]SIM\033[0m\n\033[31m[2]NÃO\033[0m")
         tela_excluir=get_input("\n\033[47m\033[30mOpção Desejada:\033[0m",int)
